@@ -26,10 +26,11 @@ class EasyControlLoadFlux:
     @classmethod
     def INPUT_TYPES(cls):
         return {
-            "required": {
-                "hf_token": ("STRING", {"default": "", "multiline": True}),
-            },
-            "optional": {"load_8bit": ("BOOLEAN", {"default": True}), "cpu_offload": ("BOOLEAN", {"default": True})}
+            "optional": {
+                "load_8bit": ("BOOLEAN", {"default": True}),
+                "cpu_offload": ("BOOLEAN", {"default": True}),
+                "hf_token": ("STRING", {"default": "", "multiline": True})
+            }
         }
     
     RETURN_TYPES = ("EASYCONTROL_PIPE", "EASYCONTROL_TRANSFORMER")
@@ -37,7 +38,9 @@ class EasyControlLoadFlux:
     CATEGORY = "EasyControl"
 
     def load_model(self, load_8bit, cpu_offload, hf_token=None):
-        login(token=hf_token)
+        if hf_token is not None:
+            login(token=hf_token)
+
         base_path = "black-forest-labs/FLUX.1-dev"
         device = "cuda" if torch.cuda.is_available() else "cpu"
         cache_dir = folder_paths.get_folder_paths("diffusers")[0]
