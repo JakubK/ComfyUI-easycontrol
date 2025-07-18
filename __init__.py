@@ -13,7 +13,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "EasyControlLoadFlux": "Load EasyControl Flux Model",
+    "EasyControlLoadFlux": "Load EasyControl Flux Model Test",
     "EasyControlLoadLora": "Load EasyControl Lora",
     "EasyControlLoadMultiLora": "Load Multiple EasyControl Loras",
     "EasyControlGenerate": "EasyControl Generate",
