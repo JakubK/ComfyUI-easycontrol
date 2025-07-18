@@ -29,7 +29,7 @@ class EasyControlLoadFlux:
             "optional": {
                 "load_8bit": ("BOOLEAN", {"default": True}),
                 "cpu_offload": ("BOOLEAN", {"default": True}),
-                "hf_token": ("STRING", {"default": "", "multiline": True})
+                "hf_token": ("STRING", {"default": None, "multiline": True})
             }
         }
     
